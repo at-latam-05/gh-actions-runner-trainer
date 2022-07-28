@@ -23,10 +23,10 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell" do |s|
     s.path = "test-script.sh"
     s.privileged = false
-    s.args = "ABBVHGGAKQKEQLLB7ULRJF3C4MHAK"
+    s.args = "$ENV_VAR1"
     s.env = {
-      "TOKEN" => "ABBVHGGAKQKEQLLB7ULRJF3C4MHAK", 
-      "SHA256" => "a19a09f4eda5716e5d48ba86b6b78fc014880c5619b9dba4a059eaf65e131780",
+      "TOKEN" => "$ENV_VAR2", 
+      "SHA256" => "$ENV_VAR3",
       "RUNNER_NAME" => "test-runner"
     }
     s.sensitive = true 
